@@ -1,0 +1,17 @@
+{
+  "name": "rascunho-node",
+  "version": "1.0.0",
+  "description": "Rascunho",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.1",
+    "gitignore": "^0.7.0",
+    "mongoose": "^8.8.3"
+  }
+}
