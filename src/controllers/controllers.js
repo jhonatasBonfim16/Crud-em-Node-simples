@@ -25,7 +25,34 @@ async function postData(req, res){
     }
 }
 
+async function putData(req, res){
+    try{
+        connectToDatabase();
+        const id = UserModel.findById(req.params.id);
+        const user = await UserModel.updateOne(id, req.body);
+        res.status(201).json(user);
+        console.log("Dado atualizado com sucesso no banco de dados.");
+    }catch(erro){
+        res.status(500).send(erro.message);
+        console.log("Erro ao atualizar dados no banco de dados.", erro);
+    }
+}
+
+async function deleteData(req, res){
+    try{
+        connectToDatabase();
+        const id = UserModel.findById(req.params.id);
+        const user = await UserModel.deleteOne(id);
+        res.status(200).json(user);
+    }catch(erro){
+        res.status(500).send(erro.message);
+        console.log("Erro ao remover dado no banco de dados.", erro);
+    }
+}
+
 module.exports = {
     getData,
-    postData
+    postData,
+    putData,
+    deleteData
 }

@@ -1,6 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const {rotaGet, rotaPost} = require("./src/routes/routes")
+const {rotaGet, rotaPost, rotaPut, rotaDelete} = require("./src/routes/routes")
 
 const port = 8080;
 
@@ -10,5 +10,7 @@ dotenv.config();
 
 rotaGet(app);
 rotaPost(app);
+rotaPut(app);
+rotaDelete(app);
 
 app.listen(port, () => console.log("Servidor ativo."));
